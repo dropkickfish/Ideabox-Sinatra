@@ -21,3 +21,5 @@ class IdeaBoxApp < Sinatra::Base
     redirect '/'
   end
 end
+
+
