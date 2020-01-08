@@ -1,5 +1,8 @@
 
-    <h1>IdeaBox</h1>
+<div class = "row">
+<div class="col">
+</div>
+<div class="col">
 <form action='/<%= idea.id %>' method='POST'>
   <p>
     <% if idea.id %>
@@ -8,10 +11,29 @@
       Your Idea:
     <% end %>
   </p>
+
   <% if idea.id %>
     <input type="hidden" name="_method" value="PUT" />
   <% end %>
-  <input type='text' name='idea[title]' value="<%= idea.title %>"/><br/>
-  <textarea name='idea[description]'><%= idea.description %></textarea><br/>
-  <input type='submit'/>
+
+    <div class="input-group mb-3 input-group-md">
+
+      <input type='text' class= "form-control" name='idea[title]' value="<%= idea.title %>"/><br/>
+
+      </div>
+
+    <div class="input-group mb-3 input-group-sm">
+
+      <textarea class= "form-control" name='idea[description]'><%= idea.description %></textarea><br/>
+
+    </div>
+
+
+  <input type='submit' class="btn btn-light"/>
+
+
 </form>
+</div>
+<div class="col">
+</div>
+</div>

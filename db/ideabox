@@ -1,5 +1,8 @@
 ---
 ideas:
 - !ruby/hash:Sinatra::IndifferentHash
-  title: fuuuuuckl
+  title: Fuck
   description: init
+- !ruby/hash:Sinatra::IndifferentHash
+  title: Wagwan?
+  description: I'd type something better in here if I was really that bothered
