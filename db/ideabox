@@ -1,2 +1,5 @@
 ---
-ideas: []
+ideas:
+- !ruby/hash:Sinatra::IndifferentHash
+  title: fuuuuuckl
+  description: init
