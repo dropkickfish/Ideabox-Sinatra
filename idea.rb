@@ -4,8 +4,8 @@ class Idea
   attr_reader :title, :description
   
   def initialize(attributes)
-    @title = attributes[:title]
-    @description = attributes[:description]
+    @title = attributes["title"]
+    @description = attributes["description"]
   end
 
   def self.all
@@ -49,7 +49,7 @@ class Idea
   def save
     database.transaction do |db|
       db['ideas'] ||= []
-      db['ideas'] << { title: title, description: description }
+      db['ideas'] << { "title" => title, "description" => description }
     end
   end
 
