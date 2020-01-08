@@ -11,6 +11,9 @@
       <div class="input-group mb-3 input-group w-75">
       <textarea class= "form-control" name='idea[description]' placeholder="Idea"></textarea><br/>
       </div>
+            <div class="input-group mb-3 input-group w-75">
+      <input class= "form-control" type='text' placeholder="Tags" name='idea[tag]'/><br/>
+      </div>
       <input type='submit' class="btn btn-light"/>
     </form>
     </div>
@@ -18,41 +21,56 @@
     <div class="col">
       <h3>Existing Ideas</h3>
           <ul>
-          <% ideas.each do |idea| %>
+            <% ideas.each do |idea| %>
           
           <li>
           
-          <h6><%= idea.title %></h4>
-
-          <%= idea.description %>
+          <h6><%= idea.title %></h6>
+            <p><%= idea.description %></p>
+            <p class="font-italic"><%= idea.tag%></p>
           
           <div class="container">
               <div class="row">
 
-               <div class="col">
-                <form action='/<%= idea.id %>/like' method='POST' style="display: inline">
-                <input type='submit' class="btn btn-light" value="Like"/>
-               </form> 
+                <div class="col">
+                  <form action='/<%= idea.id %>/like' method='POST' style="display: inline">
+                    <input type='submit' class="btn btn-light" value="Like"/>
+                  </form> 
                 </div>
 
-               <div class="col">
-          
-                <a href="/<%= idea.id %>/edit" class="btn btn-light" role="button">Edit</a>
-               </div>
+                <div class="col">
+                  <a href="/<%= idea.id %>/edit" class="btn btn-light" role="button">Edit</a>
+                </div>
 
-              <div class="col">
-              <form action='/<%= idea.id %>' method='POST'>
-              <input type="hidden" name="_method" value="DELETE">
-              <input type='submit' class="btn btn-light" value="Delete"/>
-              </form>
-              </li>
-              <% end %>
+                <div class="col">
+                  <form action='/<%= idea.id %>' method='POST'>
+                    <input type="hidden" name="_method" value="DELETE">
+                    <input type='submit' class="btn btn-light" value="Delete"/>
+                  </form>
+                  <% end %>
+                </div>
+
+            </li>
             </ul>
-            </div>
-            </div>
+              </div>
+            </div>  
+          </div>  
+          
+                
+
+      <div class="col">
+      <h3>Tags</h3>
+      <ul>
+          <% ideas.each do |tag| %>
+          
+          <li>
+          <% end %>
+      </ul>
+      </li>    
     </div>
 
   </div>
+
 
 
 

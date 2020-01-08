@@ -6,3 +6,12 @@ ideas:
 - !ruby/hash:Sinatra::IndifferentHash
   title: Wagwan?
   description: I'd type something better in here if I was really that bothered
+  tag: Adding a tag
+- !ruby/hash:Sinatra::IndifferentHash
+  title: Testing tags
+  description: Hopefully this adds a tag in the db
+  tag: Tag
+- !ruby/hash:Sinatra::IndifferentHash
+  title: Testing 2 tags at a time
+  description: This is going to break, I know it
+  tag: Tag 1, Tag 2
