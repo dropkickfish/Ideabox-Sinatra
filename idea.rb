@@ -17,6 +17,12 @@ class Idea
   def self.database
     @database ||= YAML::Store.new('ideabox')
   end
+  
+  def self.delete(position)
+    database.transaction do
+        database['ideas'].delete_at(position)
+    end
+  end
 
   def self.find(id)
     raw_idea = find_raw_idea(id)
@@ -35,9 +41,9 @@ class Idea
     end
   end
 
-  def self.delete(position)
+  def self.update(id, data)
     database.transaction do
-        database['ideas'].delete_at(position)
+      database['ideas'][id] = data
     end
   end
 
@@ -53,5 +59,3 @@ end
 def database
     Idea.database
 end
-
-  

@@ -24,4 +24,12 @@ class IdeaBoxApp < Sinatra::Base
     Idea.delete(id.to_i)
     redirect '/'
   end
+  put '/:id' do |id|
+    data = {
+      :title => params['idea_title'],
+      :description => params['idea_description']
+    }
+    Idea.update(id.to_i, data)
+    redirect '/'
+  end
 end
