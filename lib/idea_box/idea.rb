@@ -1,5 +1,5 @@
 class Idea
-  attr_reader :title, :description, :rank, :id, :tag
+  attr_reader :title, :description, :rank, :id, :tags
   include Comparable
 
   def initialize(attributes)
@@ -7,7 +7,7 @@ class Idea
     @description = attributes["description"]
     @rank = attributes["rank"] || 0
     @id = attributes["id"]
-    @tag = attributes["tag"]
+    @tags = sanitizeTags(attributes["tags"] || [])
   end
 
   def <=>(other)
@@ -23,13 +23,29 @@ class Idea
       "title" => title,
       "description" => description,
       "rank" => rank,
-      "tag " => tag
+      "tags" => tags
      }
   end 
 
   def like!
     @rank += 1
   end
+
+  def sanitizeTags(tags)
+
+		return [] if tags.empty?
+		return tags if tags.class == Array
+
+		tags = tags.split(",")
+
+		tags.map do |tag|
+
+      tag.lstrip.rstrip.capitalize
+      
+
+		end
+	
+	end
 
 end
 

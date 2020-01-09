@@ -1,17 +1,18 @@
 ---
 ideas:
 - !ruby/hash:Sinatra::IndifferentHash
-  title: Fuck
-  description: init
+  title: Test
+  description: Idea
+  tags: tag
 - !ruby/hash:Sinatra::IndifferentHash
-  title: Wagwan?
-  description: I'd type something better in here if I was really that bothered
-  tag: Adding a tag
+  title: test
+  description: test
+  tags: 1, 2, 3
 - !ruby/hash:Sinatra::IndifferentHash
-  title: Testing tags
-  description: Hopefully this adds a tag in the db
-  tag: Tag
+  title: Tag
+  description: Tag
+  tags: Tag
 - !ruby/hash:Sinatra::IndifferentHash
-  title: Testing 2 tags at a time
-  description: This is going to break, I know it
-  tag: Tag 1, Tag 2
+  title: ''
+  description: ''
+  tags: ''

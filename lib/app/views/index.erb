@@ -12,9 +12,9 @@
       <textarea class= "form-control" name='idea[description]' placeholder="Idea"></textarea><br/>
       </div>
             <div class="input-group mb-3 input-group w-75">
-      <input class= "form-control" type='text' placeholder="Tags" name='idea[tag]'/><br/>
+      <input class= "form-control" type='text' placeholder="Tags (separate multiple with ,)" name='idea[tags]'/><br/>
       </div>
-      <input type='submit' class="btn btn-light"/>
+      <input type='submit' class="btn btn-outline-secondary"/>
     </form>
     </div>
 
@@ -27,25 +27,26 @@
           
           <h6><%= idea.title %></h6>
             <p><%= idea.description %></p>
-            <p class="font-italic"><%= if(idea.tag != nil) then "##{idea.tag}" end %></p>
-          
+            <p class="font-italic"><%= idea.tags.each do |tag|
+            end %></p>
+
           <div class="container">
               <div class="row">
 
                 <div class="col">
                   <form action='/<%= idea.id %>/like' method='POST' style="display: inline">
-                    <input type='submit' class="btn btn-light" value="Like"/>
+                    <input type='submit' class="btn btn-outline-secondary" value="Like"/>
                   </form> 
                 </div>
 
                 <div class="col">
-                  <a href="/<%= idea.id %>/edit" class="btn btn-light" role="button">Edit</a>
+                  <a href="/<%= idea.id %>/edit" class="btn btn-outline-secondary" role="button">Edit</a>
                 </div>
 
                 <div class="col">
                   <form action='/<%= idea.id %>' method='POST'>
                     <input type="hidden" name="_method" value="DELETE">
-                    <input type='submit' class="btn btn-light" value="Delete"/>
+                    <input type='submit' class="btn btn-outline-secondary" value="Delete"/>
                   </form>
                   <% end %>
                 </div>
@@ -63,10 +64,13 @@
       <ul>
       <% ideas.each do |idea| %>
       
-      <li>
-          <%= if(idea.tag != nil && idea.tag != "") then idea.tag end %>
+<button type="button" class="btn btn-outline-secondary">
+          <%= if(idea.tags != nil && idea.tags != "") then idea.tags end %>
           <% end %>     
- </li>   
+           
+           </button>        
+ 
+
       </ul>
        
     </div>

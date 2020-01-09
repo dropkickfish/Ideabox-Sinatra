@@ -29,11 +29,11 @@
     </div>
 
     <div class="input-group mb-3 input-group w-75">
-      <input class= "form-control" type='text' placeholder="Tags" name='idea[tag]'/><br/>
+      <input class= "form-control" type='text'  name='idea[tags]'  value="<%= idea.tags.each do |tag| tag end %>"><br/>
       </div>
 
 
-  <input type='submit' class="btn btn-light"/>
+  <input type='submit' class="btn btn-outline-secondary"/>
 
 
 </form>
