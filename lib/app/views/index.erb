@@ -62,8 +62,8 @@
       <div class="col-sm-4">
       <h3>Tags</h3>
       <ul>
-      <% ideas.each do |idea| %>
-      <% idea.tags.each do |tag| %>
+      <% tags = Tags.getUnique(ideas) %>
+      <% tags.each do |tag| %>
            
      
 <button type="button" class="btn btn-outline-secondary">
@@ -73,7 +73,7 @@
           
            </button>    
            <% end %>
-           <% end %>
+           
 
       </ul>
        
