@@ -9,6 +9,4 @@ class Tags
         uniqueTags.sort
     end
 
-    def self.separate
-    end
 end
