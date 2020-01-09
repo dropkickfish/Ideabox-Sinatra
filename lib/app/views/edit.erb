@@ -16,7 +16,7 @@
     <input type="hidden" name="_method" value="PUT" />
   <% end %>
 
-    <div class="input-group mb-3 input-group-md">
+    <div class="input-group mb-3 input-group-sm">
 
       <input type='text' class= "form-control" name='idea[title]' value="<%= idea.title %>"/><br/>
 
@@ -28,8 +28,8 @@
 
     </div>
 
-    <div class="input-group mb-3 input-group w-75">
-      <input class= "form-control" type='text'  name='idea[tags]'  value="<%= idea.tags.each do |tag| tag end %>"><br/>
+    <div class="input-group mb-3 input-group-sm">
+      <input class= "form-control" type='text'  name='idea[tags]'  value=<%= idea.tags %>><br/>
       </div>
 
 

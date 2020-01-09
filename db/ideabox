@@ -1,18 +1,14 @@
 ---
 ideas:
 - !ruby/hash:Sinatra::IndifferentHash
-  title: Test
-  description: Idea
-  tags: tag
-- !ruby/hash:Sinatra::IndifferentHash
   title: test
   description: test
-  tags: 1, 2, 3
+  tags: '1,2,3'
 - !ruby/hash:Sinatra::IndifferentHash
-  title: Tag
-  description: Tag
-  tags: Tag
+  title: Hello
+  description: This is an idea
+  tags: With tags
 - !ruby/hash:Sinatra::IndifferentHash
-  title: ''
-  description: ''
-  tags: ''
+  title: Testing
+  description: Another with duplicate
+  tags: '1,1'

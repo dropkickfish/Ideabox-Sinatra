@@ -6,10 +6,10 @@
       <form action='/' method='POST'>
 
       <div class="input-group mb-3 input-group w-75">
-      <input class= "form-control" type='text' placeholder="Title" name='idea[title]'/><br/>
+      <input class= "form-control" type='text' placeholder="Title" name='idea[title]' required/><br/>
       </div>
       <div class="input-group mb-3 input-group w-75">
-      <textarea class= "form-control" name='idea[description]' placeholder="Idea"></textarea><br/>
+      <textarea class= "form-control" name='idea[description]' placeholder="Idea" required></textarea><br/>
       </div>
             <div class="input-group mb-3 input-group w-75">
       <input class= "form-control" type='text' placeholder="Tags (separate multiple with ,)" name='idea[tags]'/><br/>
@@ -27,9 +27,9 @@
           
           <h6><%= idea.title %></h6>
             <p><%= idea.description %></p>
-            <p class="font-italic"><%= idea.tags.each do |tag|
-            end %></p>
-
+            <% idea.tags.each do |tag| %>
+            <span class="font-italic">#<%= tag %></span>
+            <% end %> 
           <div class="container">
               <div class="row">
 
@@ -63,13 +63,17 @@
       <h3>Tags</h3>
       <ul>
       <% ideas.each do |idea| %>
-      
-<button type="button" class="btn btn-outline-secondary">
-          <%= if(idea.tags != nil && idea.tags != "") then idea.tags end %>
-          <% end %>     
+      <% idea.tags.each do |tag| %>
            
-           </button>        
- 
+     
+<button type="button" class="btn btn-outline-secondary">
+          
+          
+          <%= tag %>
+          
+           </button>    
+           <% end %>
+           <% end %>
 
       </ul>
        
