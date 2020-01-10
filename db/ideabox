@@ -8,3 +8,7 @@ ideas:
   title: Test two
   description: This idea has 2 tags
   tags: Two tags, tag
+- !ruby/hash:Sinatra::IndifferentHash
+  title: This also has two tags
+  description: But only one is relevant to all 3 ideas
+  tags: tag, tagged, thrice
