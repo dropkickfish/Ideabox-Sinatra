@@ -1,9 +1,8 @@
-
 <div class = "row">
-<div class="col">
-</div>
-<div class="col">
-<form action='/<%= idea.id %>' method='POST'>
+  <div class="col">
+  </div>
+  <div class="col">
+    <form action='/<%= idea.id %>' method='POST'>
   <p>
     <% if idea.id %>
       Edit your Idea:
@@ -15,27 +14,17 @@
   <% if idea.id %>
     <input type="hidden" name="_method" value="PUT" />
   <% end %>
-
-    <div class="input-group mb-3 input-group-sm">
-
-      <input type='text' class= "form-control" name='idea[title]' value="<%= idea.title %>"/><br/>
-
-      </div>
-
-    <div class="input-group mb-3 input-group-sm">
-
-      <textarea class= "form-control" name='idea[description]'><%= idea.description %></textarea><br/>
-
-    </div>
-
-    <div class="input-group mb-3 input-group-sm">
-      <input class= "form-control" type='text'  name='idea[tags]'  value="<%= idea.tags.join(', ') %>"><br/>
-      </div>
-
-
+  <div class="input-group mb-3 input-group-sm">
+    <input type='text' class= "form-control" name='idea[title]' value="<%= idea.title %>"/><br/>
+  </div>
+  <div class="input-group mb-3 input-group-sm">
+    <textarea class= "form-control" name='idea[description]'><%= idea.description %></textarea>
+    <br/>
+  </div>
+  <div class="input-group mb-3 input-group-sm">
+    <input class= "form-control" type='text'  name='idea[tags]'  value="<%= idea.tags.join(', ') %>"><br/>
+  </div>
   <input type='submit' class="btn btn-outline-secondary"/>
-
-
 </form>
 </div>
 <div class="col">

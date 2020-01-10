@@ -1,23 +1,7 @@
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-12 col-md-4">
-      <h3>Submit an idea</h3>
-      <form action='/' method='POST'>
-        <div class="input-group mb-3 input-group w-75">
-          <input class= "form-control" type='text' placeholder="Title" name='idea[title]' required/><br/>
-        </div>
-        <div class="input-group mb-3 input-group w-75">
-          <textarea class= "form-control" name='idea[description]' placeholder="Idea" required></textarea>
-          <br/>
-        </div>
-        <div class="input-group mb-3 input-group w-75">
-          <input class= "form-control" type='text' placeholder="Tags (separate multiple with ,)" name='idea[tags]'/><br/>
-        </div>
-        <input type='submit' class="btn btn-outline-secondary"/>
-      </form>
-    </div>
-    <div class="col-12 col-md-4 ">
-      <h3>Existing Ideas</h3>
+    <div class="row">
+      <h3>Ideas tagged #<%= tag %> </h3>
+      <div class="row">
+     <div class="card-columns"> 
       <% ideas.each do |idea| %>
         <div class="card mb-2 mx-auto">
           <div class="card-header"><%= idea.title %></div>
@@ -46,11 +30,33 @@
         </div>
       <% end %>
     </div>
-    <div class="col-12 col-md-4 ">
-      <h3>Tags</h3>
+    </div>
+</div>
+
+         <div class="row">
+      <h5>Combine other tags</h5>
+      <div class="row">
       <ul>
-        <% tags = Tags.getUnique(ideas) %>
-        <% tags.each do |tag| %>
+        <% tags = Tags.allBut(tag)
+        tags.each do |tag| %>
+        <form action='/<%== tag %>' method='POST' style="display: inline">
+          <input type='submit' class="btn btn-outline-secondary mb-1 " value=" <%= tag %>">
+           
+          </input>
+          </form>
+        <% end %>
+        
+      </ul>
+      </div>
+      </div>
+
+    <div class="row">
+      <h5>View other tags</h5>
+      <div class="row">
+      <ul>
+         <% 
+        tags = Tags.allBut(tag)
+        tags.each do |tag| %>
         <form action='/<%== tag %>' method='POST' style="display: inline">
           <input type='submit' class="btn btn-outline-secondary mb-1 " value=" <%= tag %>">
            
@@ -58,6 +64,7 @@
           </form>
         <% end %>
       </ul>
-    </div>
-  </div>
+      </div>
+</div>
 
+    

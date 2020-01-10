@@ -1,4 +1,6 @@
 require 'idea_box'
+require 'erubis'
+
 
 class IdeaBoxApp < Sinatra::Base
   set :method_override, true
@@ -23,6 +25,11 @@ class IdeaBoxApp < Sinatra::Base
     post '/' do
     IdeaStore.create(params[:idea])
     redirect '/'
+  end
+
+  post '/:tag' do |tag|
+    ideas = Tags.getSame(tag)
+    erb :tagged, locals: {tag: tag, ideas: ideas}
   end
 
   post '/:id/like' do |id|

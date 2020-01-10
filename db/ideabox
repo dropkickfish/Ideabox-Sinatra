@@ -1,23 +1,10 @@
 ---
 ideas:
-- title: test
-  description: test
-  rank: 1
-  tags:
-  - '1'
-  - '2'
-  - '3'
-- title: Hello
-  description: This is an idea
-  rank: 1
-  tags:
-  - Tags
-- title: Testing
-  description: Another with duplicate
-  rank: 1
-  tags:
-  - '1'
 - !ruby/hash:Sinatra::IndifferentHash
   title: Test
   description: Idea
-  tags: 1, 2
+  tags: Tag
+- !ruby/hash:Sinatra::IndifferentHash
+  title: Test two
+  description: This idea has 2 tags
+  tags: Two tags, tag
