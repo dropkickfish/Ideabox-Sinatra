@@ -47,6 +47,16 @@ class Idea
 	
 	end
 
+#  def self.getUnique(ideas)
+ #   uniqueIdeas = []
+  #  ideas.each do |idea|
+   #     idea.description.each do |description|
+    #        uniqueIdeas << description if uniqueIdeas.count(description) == 0
+     #   end
+#    end
+ #   uniqueIdeas
+#end
+
 end
 
 def database

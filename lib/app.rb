@@ -32,6 +32,13 @@ class IdeaBoxApp < Sinatra::Base
     erb :tagged, locals: {tag: tag, ideas: ideas}
   end
 
+  post '/:tag/combine' do |tag|
+    tags = tag.split","
+    ideas = Tags.combineWith(tags)
+    print ideas
+    erb :combination, locals: {tags: tags, ideas: ideas}
+  end
+
   post '/:id/like' do |id|
     idea = IdeaStore.find(id.to_i)
     idea.like!

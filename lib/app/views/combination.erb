@@ -1,6 +1,4 @@
-    <div class="row">
-    
-      <h3>Ideas tagged #<%== tag %>  </h3>
+  <h3>Ideas tagged <% tags.each do |tag| %> <%="##{tag}, "%><% end %></h3>
       <div class="row">
      <div class="card-columns"> 
       <% ideas.each do |idea| %>
@@ -34,43 +32,9 @@
     </div>
 </div>
 
-         <div class="row">
-      <h5>Combine other tags</h5>
-      <div class="row">
-      <ul>
-        <%
-        original = tag        
-        tags = Tags.allBut(tag)
-        tags << original
-        tags.each do |tag| %>
-        <form action='/<%== original %>,<%== tag %>/combine' method='POST' style="display: inline">
-          <input type='submit' class="btn btn-outline-secondary mb-1 " value="<%= tag %>">
-           
-          </input>
-          </form>
-        <% end %>
-        
-      </ul>
-      </div>
-      </div>
 
-    <div class="row">
-      <h5>View other tags</h5>
-      <div class="row">
-      <ul>
-         <% 
-        tags = Tags.allBut(tag)
-        tags.each do |tag| %>
-        <form action='/<%== tag %>' method='POST' style="display: inline">
-          <input type='submit' class="btn btn-outline-secondary mb-1 " value=" <%= tag %>">
-           
-          </input>
-          </form>
-        <% end %>
-      </ul>
-      </div>
-</div>
 
 <form action='/' method='GET' >
                   <input type='submit' class="btn btn-outline-secondary" value="Return"/>
                 </form>
+
