@@ -41,7 +41,19 @@ class Tags
                             
                     end
                 end
-       combinedIdeas #returns all items matching either Tag1 and Tag2
+                combinedIdeas  #returns all items matching either Tag1 and Tag2
+
+                #erroneously returns an extra item if both tags match it. This is because the second tag creates a new identifier for the idea which 
+                #shares the first tag. E.g. below
+
+#[#<Idea:0x0000000004678b40 @title="Test", @description="Idea", @rank=0, @id=0, @tags=["Tag"]>, 
+#<Idea:0x00000000046782f8 @title="Test two", @description="This idea has 2 tags", @rank=0, @id=1, @tags=["Two tags", "Tag"]>, 
+#<Idea:0x0000000004ac3e20 @title="This also has two tags", @description="But only one is relevant to all 3 ideas", @rank=0, @id=2, @tags=["Tag", "Tagged", "Thrice"]>, 
+#<Idea:0x00000000046bdda8 @title="This also has two tags", @description="But only one is relevant to all 3 ideas", @rank=0, @id=2, @tags=["Tag", "Tagged", "Thrice"]>]
+
+# To Do - figure out how to clean this array of hashes so that items not matching both tags are removed, and then duplicates are removed. 
+# Use duplicates to try and find the combined tags?
+                
        # combinedTags
     end
     
