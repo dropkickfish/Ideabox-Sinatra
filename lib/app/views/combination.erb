@@ -1,3 +1,4 @@
+<div class="row">
   <h3>Ideas tagged <% tags.each do |tag| %> <%="##{tag}, "%><% end %></h3>
       <div class="row">
      <div class="card-columns"> 
@@ -29,12 +30,20 @@
         </div>
       <% end %>
     </div>
+    
     </div>
 </div>
 
+  <div class="row">
+    <% if ideas.empty? 
+    sorry = "There are no tag combinations matching your search"%>
+    <h4><%= sorry%></h4>
+    <% end %>
+    </div>
 
 
+<div class="row">
 <form action='/' method='GET' >
                   <input type='submit' class="btn btn-outline-secondary" value="Return"/>
                 </form>
-
+</div>

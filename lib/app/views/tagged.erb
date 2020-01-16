@@ -41,7 +41,6 @@
         <%
         original = tag        
         tags = Tags.allBut(tag)
-        tags << original
         tags.each do |tag| %>
         <form action='/<%== original %>,<%== tag %>/combine' method='POST' style="display: inline">
           <input type='submit' class="btn btn-outline-secondary mb-1 " value="<%= tag %>">
