@@ -12,3 +12,18 @@ ideas:
   title: This also has two tags
   description: But only one is relevant to all 3 ideas
   tags: tag, tagged, thrice
+- !ruby/hash:Sinatra::IndifferentHash
+  title: Testing Time
+  description: Should create idea with time attr
+  tags: time, tag
+  created: Friday
+- !ruby/hash:Sinatra::IndifferentHash
+  title: Time test 2
+  description: Testing time attr
+  tags: Time, tag, test
+  created: Friday
+- !ruby/hash:Sinatra::IndifferentHash
+  title: Time again
+  description: Time
+  tags: time, test
+  created: Friday 17-01-2020 12:16

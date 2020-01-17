@@ -8,6 +8,7 @@ class Idea
     @rank = attributes["rank"] || 0
     @id = attributes["id"]
     @tags = sanitizeTags(attributes["tags"] || [])
+    @created = attributes["created"]
   end
 
   def <=>(other)

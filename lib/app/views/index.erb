@@ -13,6 +13,7 @@
         <div class="input-group mb-3 input-group w-75">
           <input class= "form-control" type='text' placeholder="Tags (separate multiple with ,)" name='idea[tags]'/><br/>
         </div>
+        <input type="hidden" name='idea[created]' value='<%time = Time.new%><%= time.strftime("%A, %d-%m-%Y, %H:%M")%>'/>
         <input type='submit' class="btn btn-outline-secondary"/>
       </form>
     </div>
