@@ -1,27 +1,15 @@
 ---
 ideas:
 - !ruby/hash:Sinatra::IndifferentHash
-  title: Test
-  description: Idea
-  tags: Tag
-- !ruby/hash:Sinatra::IndifferentHash
-  title: Test two
-  description: This idea has 2 tags
-  tags: Two tags, tag
-- !ruby/hash:Sinatra::IndifferentHash
-  title: This also has two tags
-  description: But only one is relevant to all 3 ideas
-  tags: tag, tagged, thrice
-- !ruby/hash:Sinatra::IndifferentHash
   title: Testing Time
   description: Should create idea with time attr
   tags: time, tag
-  created: Friday
+  created: Thursday 16-01-2020 12:25
 - !ruby/hash:Sinatra::IndifferentHash
   title: Time test 2
   description: Testing time attr
   tags: Time, tag, test
-  created: Friday
+  created: Friday 17-01-2020 14:16
 - !ruby/hash:Sinatra::IndifferentHash
   title: Time again
   description: Time

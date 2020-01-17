@@ -1,5 +1,6 @@
 require 'idea_box'
 require 'erubis'
+require 'chartkick'
 
 
 class IdeaBoxApp < Sinatra::Base
@@ -15,6 +16,12 @@ class IdeaBoxApp < Sinatra::Base
 
   get '/' do
     erb :index, locals: {ideas: IdeaStore.all.sort, idea: Idea.new(params)}
+  end
+
+  get '/stats' do
+    @title = "Deployments per day"
+    @data = {}
+    erb :statistics, locals: {ideas: IdeaStore.all.sort, idea: Idea.new(params)}
   end
 
   get '/:id/edit' do |id|
