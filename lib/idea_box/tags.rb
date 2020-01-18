@@ -24,6 +24,7 @@ class Tags
     tags.delete(tag)
     tags
   end
+
   def self.combineWith(tag) 
   combinedTags = []
   combinedIdeas = []
@@ -40,19 +41,9 @@ class Tags
         end            
     end
   end
-  combinedFinal = []
-  unique = []
-  combinedIdeas.each do |idea|
-  description = idea.description
-    if unique.count(description) == 0 
-      unique << description
-      combinedFinal  << idea
-    else 
-      combinedIdeas.delete(idea)  
-    end
+  Idea.getUnique(combinedIdeas)
   end
-  combinedFinal  
-  end  
+    
     def self.sortBy(sorter)
         tags = [Tags.getUnique(ideas)]
         tags.sort_by(sorter)
