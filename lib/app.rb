@@ -19,9 +19,7 @@ class IdeaBoxApp < Sinatra::Base
   end
 
   get '/stats' do
-    @title = "Deployments per day"
-    @data = {}
-    erb :statistics, locals: {ideas: IdeaStore.all.sort, idea: Idea.new(params)}
+    erb :statistics, locals: {ideas: IdeaStore.all, idea: Idea.new(params)}
   end
 
   get '/:id/edit' do |id|
@@ -42,7 +40,6 @@ class IdeaBoxApp < Sinatra::Base
   post '/:tag/combine' do |tag|
     tags = tag.split","
     ideas = Tags.combineWith(tags)
-    print ideas
     erb :combination, locals: {tags: tags, ideas: ideas}
   end
 

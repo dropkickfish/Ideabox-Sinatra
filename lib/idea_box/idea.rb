@@ -1,5 +1,5 @@
 class Idea
-  attr_reader :title, :description, :rank, :id, :tags
+  attr_reader :title, :description, :rank, :id, :tags, :created
   include Comparable
 
   def initialize(attributes)
@@ -24,7 +24,8 @@ class Idea
       "title" => title,
       "description" => description,
       "rank" => rank,
-      "tags" => tags
+      "tags" => tags,
+      "created" => created
      }
   end 
 

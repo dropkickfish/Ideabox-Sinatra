@@ -3,19 +3,18 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-12 col-md-4">
-      <h3></h3>
-      
-      <%= pie_chart({"Football" => 10, "Basketball" => 5, "Hockey" => 2})%>
-      
-    </div>
-    <div class="col-12 col-md-4 ">
-      <h3>Column 2</h3>
+      <h3>Activity by time</h3>
+        <%=line_chart(Stats.hourCreated(ideas))%>
       
     </div>
     <div class="col-12 col-md-4 ">
-      <h3>Column 3</h3>
-      <ul>
-      </ul>
+      <h3>Actvity by date</h3>
+        <%=line_chart(Stats.dateCreated(ideas))%>
+  
+    </div>
+    <div class="col-12 col-md-4 ">
+      <h3>Actvity by day</h3>
+      <%= column_chart(Stats.dayCreated(ideas)) %>
     </div>
   </div>
 

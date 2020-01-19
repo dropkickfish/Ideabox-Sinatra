@@ -1,17 +1,17 @@
 ---
 ideas:
 - !ruby/hash:Sinatra::IndifferentHash
-  title: Testing Time
-  description: Should create idea with time attr
-  tags: time, tag
-  created: Thursday 16-01-2020 12:25
+  title: Stat test
+  description: Idea
+  tags: tag
+  created: Sunday, 19-01-2020, 10:33
 - !ruby/hash:Sinatra::IndifferentHash
-  title: Time test 2
-  description: Testing time attr
-  tags: Time, tag, test
-  created: Friday 17-01-2020 14:16
+  title: Stat test 2
+  description: Idea
+  tags: Another tag
+  created: Sunday, 19-01-2020, 10:33
 - !ruby/hash:Sinatra::IndifferentHash
-  title: Time again
-  description: Time
-  tags: time, test
-  created: Friday 17-01-2020 12:16
+  title: Stat test 3
+  description: Idea
+  tags: Tagged
+  created: Monday, 20-01-2020, 11:12
