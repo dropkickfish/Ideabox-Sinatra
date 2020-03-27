@@ -1,5 +1,5 @@
 # Ideabox-Sinatra
-Jumpstartlabs Ideabox project (Work in progress)
+Jumpstartlabs Ideabox project (Work in progress - currently taking a backseat to [CSToolsUpdater](https://github.com/dropkickfish/CSToolsUpdater) which solved and is solving an actual problem)
 
 ## Process
 This is a hybrid guided tutorial and independent work project. The text will walk you through the step-by-step process of building the fundamental functionality. Then the tutorial ends with a list of possible extensions. You should choose and implement several of these extensions to practice and refine the learnings from the tutorial.
